@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Phonebook Management</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<h2>دفترچه تلفن</h2>
+
+<div class="controls">
+    <input type="text" id="searchBar" placeholder="جستجوی نام...">
+    <select id="professionFilter">
+        <option value="">همه مشاغل</option>
+    </select>
+    <div class="export-wrapper">
+        <button onclick="toggleExportPopup()">📤خروجی</button>
+        <div id="exportPopup">
+            <button onclick="exportToExcel()">اکسل</button>
+            <button onclick="exportToPDF()">PDF</button>
+            <button onclick="exportToWord()">ورد</button>
+        </div>
+    </div>
+</div>
+
+<table id="phonebookTable">
+    <thead>
+        <tr>
+            <th>نام</th>
+            <th>شغل</th>
+            <th>کد سازمانی</th>
+            <th>شماره تلفن</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <!-- Default 5 Rows -->
+        <tr>
+            <td contenteditable="false">علی احمدی</td>
+            <td contenteditable="false">مدیر</td>
+            <td contenteditable="false">101</td>
+            <td contenteditable="false">09120000001</td>
+            <td class="actions">
+                <button class="edit-btn" onclick="editRow(this)">✏️ ویرایش</button>
+                <button class="delete-btn" onclick="deleteRow(this)">🗑 حذف</button>
+            </td>
+        </tr>
+        <!-- Add more as needed -->
+    </tbody>
+</table>
+
+<button class="add-btn" onclick="addRow()">➕ افزودن سطر</button>
+
+<!-- JS Libraries for Export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
