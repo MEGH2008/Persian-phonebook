@@ -14,7 +14,7 @@
 ## 🔧 نحوه استفاده
 1. پروژه را کلون یا دانلود کنید:
 ```bash
-git clone https://github.com/YourUsername/phonebook-app.git
+git clone https://github.com/megh2008/persian-phonebook.git
 ```
 2. فایل `index.html` را در مرورگر باز کنید.
 3. از امکانات کامل آن بهره ببرید.
