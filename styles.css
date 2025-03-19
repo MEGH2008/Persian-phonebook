@@ -1,105 +1,95 @@
-body {
-            font-family: "Segoe UI", sans-serif;
-            background-color: #e6f5e6;
-            margin: 0;
-            padding: 20px;
-        }
+@import url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css");
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: "Vazirmatn", Tahoma, sans-serif;
 
-        h2 {
-            text-align: center;
-            color: #2e7d32;
-        }
-
-        .controls {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        input[type="text"], select {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            min-width: 200px;
-        }
-
-        .export-wrapper {
-            position: relative;
-        }
-
-        #exportPopup {
-            display: none;
-            position: absolute;
-            top: 110%;
-            right: 0;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            z-index: 100;
-        }
-
-        #exportPopup button {
-            display: block;
-            width: 100%;
-            padding: 6px;
-            margin: 5px 0;
-            background-color: #a5d6a7;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #exportPopup button:hover {
-            background-color: #81c784;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 12px;
-            text-align: right;
-        }
-
-        th {
-            background-color: #c8e6c9;
-        }
-
-        .actions button {
-            margin: 0 5px;
-            padding: 6px 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .edit-btn {
-            background-color: #ffee58;
-        }
-
-        .delete-btn {
-            background-color: #ef9a9a;
-        }
-
-        .add-btn {
-            margin-top: 20px;
-            background-color: #81c784;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .add-btn:hover {
-            background-color: #66bb6a;
-        }
+}
+html, body {
+  transition: background 0.3s, color 0.3s;
+  background: #f2f2f2; color: #333;
+}
+.navbar {
+  background: #242526; color: #fff; padding: 15px; text-align: center;
+}
+.container {
+  width: 95%; max-width: 1000px; margin: 20px auto;
+}
+.controls {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; align-items: center;
+}
+.controls input[type="text"], .controls select {
+  padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px;
+}
+.btn {
+  padding: 8px 16px; border: none; border-radius: 4px; background: #2d88ff; color: #fff; cursor: pointer;
+}
+.btn:hover {
+  background: #1567d6;
+}
+.export-wrapper {
+  position: relative; margin-left: auto;
+}
+.table-wrapper {
+  background: #fff; border: 1px solid #ccc; border-radius: 6px; overflow: auto;
+}
+table {
+  width: 100%; border-collapse: collapse;
+}
+th, td {
+  border-bottom: 1px solid #eee; padding: 12px; text-align: left; min-width: 90px;
+}
+tr:hover td {
+  background-color: #f7faff;
+}
+.pagination {
+  display: flex; gap: 5px; justify-content: center; margin-top: 15px;
+}
+.pagination button {
+  padding: 6px 12px; border: none; border-radius: 4px; background: #ddd; cursor: pointer;
+}
+.pagination button.active {
+  background: #2d88ff; color: #fff; font-weight: bold;
+}
+.sortable {
+  cursor: pointer; user-select: none; position: relative;
+}
+.sortable:after {
+  content: "⇕"; font-size: 0.7rem; position: absolute; right: 6px; color: #999;
+}
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.4);
+  display: none; align-items: center; justify-content: center; z-index: 999; opacity: 0; transition: opacity 0.3s;
+}
+.modal-overlay.show {
+  display: flex; opacity: 1;
+}
+.modal-content {
+  background: #fff; padding: 20px; width: 90%; max-width: 400px; border-radius: 8px; transform: translateY(-20px);
+  animation: fadeInUp 0.4s forwards;
+}
+@keyframes fadeInUp {
+  to { transform: translateY(0); }
+}
+.form-group {
+  margin-bottom: 15px; display: flex; flex-direction: column;
+}
+.form-group label {
+  margin-bottom: 5px; font-weight: 600;
+}
+.modal-buttons {
+  display: flex; justify-content: flex-end; gap: 10px;
+}
+#notificationContainer {
+  position: fixed; top: 70px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px;
+}
+.notification {
+  padding: 12px 18px; border-radius: 6px; color: #fff; animation: fadeOut 4s forwards;
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-20px)};
+}
+.notification.success { background: #28a745; }
+.notification.error { background: #f44336; }
+.notification.info { background: #2196f3; }
